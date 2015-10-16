@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>ALLSO - 聚合搜索引擎</title>
-	<META NAME="ROBOTS" CONTENT="NOINDEX,FOLLOW">
+	<link rel='canonical' href='http://hzy.pw/allso' />
     <meta name="keywords" content="百度,搜索,聚合搜索,一起搜,ALLSO" />
     <meta name="description" content="通过ALLSO，输入一个关键字，你可以对2个搜索引擎同时展开搜索，页面一分为二，充分利用显示资源，相当的实用。" />
     <link href="http://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
@@ -18,7 +18,6 @@
             <h6>亲，你该升级浏览器了</h6><p>使用现代化的浏览器，才能够完美地渲染出各种页面，并拥有最快的加载速度<a id="btnUpdateBrowser" href="http://hzy.pw/p/1792" target="_blank">现在升级</a></p><p class="last"><a href="#" onclick="document.getElementById('outdated').style.display='none'" id="btnCloseUpdateBrowser" title="关闭">&times;</a></p>
         </div>
     <![endif]-->
-	<!--loading层-->
 	<div class="loading">
 		<div class="loading-gif"></div>
 	</div>	
@@ -26,14 +25,12 @@
         <div class="container-fluid row">
             <div class="navbar-header"> <a class="navbar-brand" href="http://hzy.pw/allso"><strong>&nbsp;ALLSO 聚合搜索引擎</strong></a> </div>
             <div class="collapse navbar-collapse">
-                <!-- 搜索框 -->
                 <form class="navbar-form navbar-right" onsubmit="return false;">
                     <div class="form-group">
                         <input name='s' type="text" class="form-control" id='soinput' placeholder="中原驿站 http://hzy.pw">
                     </div>
                     <button onclick='so();' type="submit" class="btn btn-primary" id='sobut'>ALLSO 一下！</button>
                 </form>
-                <!-- 左边按钮 -->
                 <ul class="nav navbar-nav navbar-left">
                     <li><a href="#" data-toggle="modal" data-target="#set">搜索设置</a></li>
                     <li class="dropdown">
@@ -55,7 +52,6 @@
                         </ul>
                     </li>
                 </ul>
-                <!-- 进度条 -->
                 <div class="progress" >
                     <div id='jdt1' class="progress-bar progress-bar-info" onclick="change_state(true)">☀</div>
                     <div id='jdt2' class="progress-bar progress-bar-success" onclick="change_state(false)">❉</div>
@@ -78,16 +74,18 @@
                         <tr><th>一号搜索引擎</th><th>二号搜索引擎</th></tr>
                         <tr>
                             <td class="set-list-1">
-                                <button type="button" class="btn btn-info" onclick="set(0,1)">百度</button>&nbsp;
-                                <button type="button" class="btn btn-info" onclick="set(0,2)">好搜</button>&nbsp;
-                                <button type="button" class="btn btn-info" onclick="set(0,3)">必应</button>&nbsp;
-                                <button type="button" class="btn btn-info" onclick="set(0,4)">谷歌</button>
+                                <p><button type="button" class="btn btn-info" onclick="set(0,0)">百度</button>&nbsp;
+                                <button type="button" class="btn btn-info" onclick="set(0,1)">好搜</button>&nbsp;
+                                <button type="button" class="btn btn-info" onclick="set(0,2)">必应</button></p>
+                                <button type="button" class="btn btn-info" onclick="set(0,3)">谷歌UK</button>&nbsp;
+                                <button type="button" class="btn btn-info" onclick="set(0,4)">谷歌HK</button></p>
                             </td>
                             <td class="set-list-2">
-                                <button type="button" class="btn btn-warning" onclick="set(1,1)">百度</button>&nbsp;
-                                <button type="button" class="btn btn-warning" onclick="set(1,2)">好搜</button>&nbsp;
-                                <button type="button" class="btn btn-warning" onclick="set(1,3)">必应</button>&nbsp;
-                                <button type="button" class="btn btn-warning" onclick="set(1,4)">谷歌</button>
+                                <button type="button" class="btn btn-warning" onclick="set(1,0)">百度</button>&nbsp;
+                                <button type="button" class="btn btn-warning" onclick="set(1,1)">好搜</button>&nbsp;
+                                <button type="button" class="btn btn-warning" onclick="set(1,2)">必应</button></p>
+                                <p><button type="button" class="btn btn-warning" onclick="set(1,3)">谷歌UK</button>&nbsp;
+                                <button type="button" class="btn btn-warning" onclick="set(1,4)">谷歌HK</button></p>
                             </td>
                         </tr>
                     </table>
@@ -103,7 +101,7 @@
 <script src="http://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
 <script src="http://cdn.bootcss.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
-<script src="js.js"></script>
+<script src="js.js?cdn=08"></script>
 
 <div id='cnzz'>
 	<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://"); document.write(unescape("%3Cspan id='cnzz_stat_icon_5009343'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s22.cnzz.com/stat.php%3Fid%3D5009343%26online%3D2' type='text/javascript'%3E%3C/script%3E"));</script>

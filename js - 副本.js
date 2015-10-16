@@ -15,19 +15,19 @@ set_top[1] = 0; set_left[1] = 0; set_foot[1] = 0;
 
 if (localStorage["allso_0"] == undefined) {
 	set(0, 3);
-	$("td.set-list-1 > button:eq(3)").removeClass("btn-info").addClass("btn-danger");
+	$("td.set-list-1 button:eq(3)").removeClass("btn-info").addClass("btn-danger");
 }
 else {
 	set(0, localStorage["allso_0"]);
-	$("td.set-list-1 > button:eq(" + localStorage["allso_0"] + ")").removeClass("btn-info").addClass("btn-danger");
+	$("td.set-list-1 button:eq(" + localStorage["allso_0"] + ")").removeClass("btn-info").addClass("btn-danger");
 }
 if (localStorage["allso_1"] == undefined) {
 	set(1, 2);
-	$("td.set-list-2 > button:eq(1)").removeClass("btn-warning").addClass("btn-success");
+	$("td.set-list-2 button:eq(1)").removeClass("btn-warning").addClass("btn-success");
 }
 else {
 	set(1, localStorage["allso_1"]);
-	$("td.set-list-2 > button:eq(" + localStorage["allso_1"] + ")").removeClass("btn-warning").addClass("btn-success");
+	$("td.set-list-2 button:eq(" + localStorage["allso_1"] + ")").removeClass("btn-warning").addClass("btn-success");
 }
 
 function set(a0b1, set_so) {
@@ -42,24 +42,28 @@ function set(a0b1, set_so) {
 	}
 	else if (set_so == 2) {
 		set_url[a0b1] = "http://cn.bing.com/search?setmkt=zh-cn&setlang=zh-cn&q=";
-		set_top[a0b1] = -70; set_left[a0b1] = -80; set_foot[a0b1] = 125;
+		set_top[a0b1] = -72; set_left[a0b1] = -80; set_foot[a0b1] = 125;
 	}
 	else if (set_so == 3) {
 		set_url[a0b1] = "http://search.aol.co.uk/aol/search?q=";
 		set_top[a0b1] = -70; set_left[a0b1] = -120; set_foot[a0b1] = 140;
 	}
+	else if (set_so == 4) {
+		set_url[a0b1] = "http://www.search.ask.com/web?q=";
+		set_top[a0b1] = -90; set_left[a0b1] = -140; set_foot[a0b1] = 128;
+	}
 	need_respond = true;
 }
 
-$("td.set-list-1 > button").click(function () {
-	$('td.set-list-1 > button').removeClass("btn-danger").addClass("btn-info");
+$("td.set-list-1 button").click(function () {
+	$('td.set-list-1 button').removeClass("btn-danger").addClass("btn-info");
 	$(this).removeClass("btn-info").addClass("btn-danger");
-	set(0, $(this).index());
+	//set(0, $(this).index());
 });
-$("td.set-list-2 > button").click(function () {
-	$('td.set-list-2 > button').removeClass("btn-success").addClass("btn-warning");
+$("td.set-list-2 button").click(function () {
+	$('td.set-list-2 button').removeClass("btn-success").addClass("btn-warning");
 	$(this).removeClass("btn-warning").addClass("btn-success");
-	set(1, $(this).index());
+	//set(1, $(this).index());
 });
 
 /* 响应get */
@@ -141,11 +145,8 @@ function so() {
 	if (need_respond)
 		respond();
 
-	//var rndw = Math.ceil(Math.random() * 97) + 1; /* 2~98  */
 	var objProgress = $('div.progress>div');
 	objProgress.addClass('progress-bar-striped active');
-	//objProgress[0].style.width = rndw + '%';
-	//objProgress[1].style.width = 100 - rndw + '%';
 	window.setTimeout(function () {
 		objProgress.removeClass('progress-bar-striped active');
 	}, 2000);
