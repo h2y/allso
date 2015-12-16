@@ -40,3 +40,21 @@ div.modal-body>div.alert {margin-bottom: 10px}
 
 
 #cnzz {display:none}
+
+
+@media (min-width: 1800px){
+	body{zoom:1.5}
+}
+@media (min-width: 1680px) and (max-width: 1799px){
+	body{zoom:1.4}
+}
+@media (min-width: 1554px) and (max-width: 1679px){
+	body{zoom:1.3}
+}
+@media (min-width: 1443px) and (max-width: 1553px){
+	body{zoom:1.2}
+}
+@media (min-width: 1327px) and (max-width: 1443px){
+	body{zoom:1.1}
+}
+body {-ms-zoom:1} /*IE*/
