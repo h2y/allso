@@ -1,9 +1,12 @@
-
 if ($(window).width() < 770) {
-    alert("ALLSO 是一个聚合性搜索引擎，可以同时对 2 个搜索引擎展开搜索，页面一分为二，充分利用屏幕资源。\n\n然而。。。\n\n你的屏幕实在是太小了，请在电脑或平板上使用 ALLSO，相信会带给你一份相当棒的体验！\n\nhttp://hzy.pw/allso/");
-    if (location.href.indexOf("so=") > -1) {
-        var tmp = location.href.split('so=', 2), tmp2 = tmp[1]; tmp = tmp2.split('&', 2);
-        window.location.href = "http://m.search.aol.co.uk/search?q=" + tmp[0];
+    var get_answer = confirm("ALLSO 是一个聚合性搜索引擎，可以同时对 2 个搜索引擎展开搜索，页面一分为二，充分利用屏幕资源。\n\n然而。。。\n\n你的屏幕实在是太小了，请在电脑或平板上使用 ALLSO，相信会带给你一份相当棒的体验！\n\nhttp://hzy.pw/allso/\n\n----------\n点击[是]，将跳转到百度手机版：");
+    if (get_answer) {
+        if(location.href.indexOf("so=") > -1){
+          var tmp = location.href.split('so=', 2), tmp2 = tmp[1]; tmp = tmp2.split('&', 2);
+          window.location.href = "http://m.baidu.com/s?word=" + tmp[0];
+        }
+        else
+          window.location.href = "http://m.baidu.com/" ;
     }
 }
 
@@ -52,10 +55,6 @@ function set(a0b1, set_so) {
         set_top[a0b1] = -72; set_left[a0b1] = -80; set_foot[a0b1] = 125;
     }
     else if (set_so == 3) {
-        set_url[a0b1] = "http://search.aol.co.uk/aol/search?q=";
-        set_top[a0b1] = -70; set_left[a0b1] = -120; set_foot[a0b1] = 140;
-    }
-    else if (set_so == 4) {
         set_url[a0b1] = "http://www.search.ask.com/web?q=";
         set_top[a0b1] = -90; set_left[a0b1] = -140; set_foot[a0b1] = 128;
     }

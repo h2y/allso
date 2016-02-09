@@ -1,4 +1,4 @@
 *.psd
 *.ico
-css.css
-js.js
+css.min.css
+js.min.js
