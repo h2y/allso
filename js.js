@@ -1,12 +1,12 @@
 if ($(window).width() < 770) {
-    var get_answer = confirm("ALLSO 是一个聚合性搜索引擎，可以同时对 2 个搜索引擎展开搜索，页面一分为二，充分利用屏幕资源。\n\n然而。。。\n\n你的屏幕实在是太小了，请在电脑或平板上使用 ALLSO，相信会带给你一份相当棒的体验！\n\nhttp://hzy.pw/allso/\n\n----------\n点击[是]，将跳转到百度手机版：");
+    var get_answer = confirm("ALLSO 是一个聚合性搜索引擎，可以同时对 2 个搜索引擎展开搜索，页面一分为二，充分利用屏幕资源。\n\n然而。。。\n\n你的屏幕实在是太小了，请在电脑或平板上使用 ALLSO，相信会带给你一份相当棒的体验！\n\nhttp://h2y.github.io/allso/\n\n----------\n点击[是]，将跳转到必应手机版：");
     if (get_answer) {
-        if(location.href.indexOf("so=") > -1){
-          var tmp = location.href.split('so=', 2), tmp2 = tmp[1]; tmp = tmp2.split('&', 2);
-          window.location.href = "http://m.baidu.com/s?word=" + tmp[0];
+        if(location.search){
+          var tmp = location.search.split('so=', 2), tmp2 = tmp[1]; tmp = tmp2.split('&', 2);
+          window.location.href = "http://cn.bing.com/search?setmkt=zh-cn&setlang=zh-cn&q=" + tmp[0];
         }
         else
-          window.location.href = "http://m.baidu.com/" ;
+          window.location.href = "http://cn.bing.com/" ;
     }
 }
 
