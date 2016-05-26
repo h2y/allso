@@ -14,11 +14,11 @@
 
 ## 链接地址
 
-**开始使用 ALLSO：[http://h2y.github.io/allso]()**
+**开始使用 ALLSO：[http://h2y.github.io/allso](http://h2y.github.io/allso)**
 
 Github 项目主页：[h2y/allso](https://github.com/h2y/allso/)
 
-个人网站发布页面：[http://hzy.pw/p/1389]()
+个人网站发布页面：[http://hzy.pw/p/1389](http://hzy.pw/p/1389)
 
 
 ## 特色功能介绍
@@ -52,7 +52,7 @@ ALLSO 采用纯单页面实现，加载一次后页面 0 刷新。
 
 - **如何将 ALLSO 设置为浏览器默认搜索引擎**
 
-ALLSO 会响应响应 Get 请求。例如，你可以访问 [http://h2y.github.io/allso/?so=Moshel]()，即可立即展开对 *Moshel* 的搜索。
+ALLSO 会响应响应 Get 请求。例如，你可以访问 [http://h2y.github.io/allso/?so=Moshel](http://h2y.github.io/allso/?so=Moshel)，即可立即展开对 *Moshel* 的搜索。
 
 所以，你可以在浏览器中这样设置，使 ALLSO 成为你的默认搜索引擎：*（浏览器设置 -> 管理搜索引擎）*
 
@@ -62,7 +62,7 @@ ALLSO 会响应响应 Get 请求。例如，你可以访问 [http://h2y.github.i
 
 是的，由于 Google 页面标明了禁止被引用在站外 iframe 中，根据互联网协议，ALLSO 不能抓取并显示其搜索内容。
 
-免翻墙路线实际是使用了 ASK.com 服务器作为中转。（[http://www.search.ask.com]()）
+免翻墙路线实际是使用了 ASK.com 服务器作为中转。（[http://www.search.ask.com](http://www.search.ask.com)）
 
 
 ## 相关推荐
