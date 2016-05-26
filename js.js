@@ -10,6 +10,9 @@ if ($(window).width() < 770) {
     }
 }
 
+//if (confirm('ALLSO 由于各种原因已停止更新，'))
+
+
 //常用变量
 var soinput_obj = $('#soinput'),
     objProgress = $('div.progress>div'),
@@ -56,7 +59,7 @@ function set(a0b1, set_so) {
     }
     else if (set_so == 3) {
         set_url[a0b1] = "http://www.search.ask.com/web?q=";
-        set_top[a0b1] = -90; set_left[a0b1] = -140; set_foot[a0b1] = 128;
+        set_top[a0b1] = -88; set_left[a0b1] = -145; set_foot[a0b1] = 127;
     }
     need_respond = true;
 }
@@ -102,7 +105,10 @@ function change_state(is_zuo) {
 /* 响应式 */
 $(window).resize(function () { respond(); });
 function respond() {
-    var winw = $(window).width(), winh = $(window).height(), navh = $("nav.navbar").height(), abx = winw / 2;
+    var winw = $('body').width(),
+        winh = $(window).height(),
+        navh = $("nav.navbar").height(),
+        abx = winw / 2;
 
     if (localStorage["allso_state"] == 0) {
         obja.fadeIn('fast').animate({ "margin-left": set_left[0], width: abx - set_left[0] }, 'fast');
