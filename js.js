@@ -111,26 +111,26 @@ function respond() {
         abx = winw / 2;
 
     if (localStorage["allso_state"] == 0) {
-        obja.fadeIn('fast').animate({ "margin-left": set_left[0], width: abx - set_left[0] }, 'fast');
-        objb.fadeIn('fast').animate({ "margin-left": abx + set_left[1], width: abx - set_left[1] }, 'fast');
+        obja.fadeIn('fast').animate({ "margin-left": set_left[0], "width": abx - set_left[0] }, 'fast');
+        objb.fadeIn('fast').animate({ "margin-left": abx + set_left[1], "width": abx - set_left[1] }, 'fast');
         objProgress[0].style.width = '50%';
         objProgress[1].style.width = '50%';
     }
     else if (localStorage["allso_state"] < 0) {
-        obja.fadeIn('fast').animate({ "margin-left": set_left[0], width: winw - set_left[0] }, 'fast');
+        obja.fadeIn('fast').animate({ "margin-left": set_left[0], "width": winw - set_left[0] }, 'fast');
         objb.fadeOut('fast');
         objProgress[0].style.width = '75%';
         objProgress[1].style.width = '25%';
     }
     else {
         obja.fadeOut('fast');
-        objb.fadeIn('fast').animate({ "margin-left": set_left[1], width: winw - set_left[0] }, 'fast');
+        objb.fadeIn('fast').animate({ "margin-left": set_left[1], "width": winw - set_left[0] }, 'fast');
         objProgress[0].style.width = '25%';
         objProgress[1].style.width = '75%';
     }
 
-    obja.animate({ "margin-top": set_top[0] + navh, height: winh - set_top[0] - navh + set_foot[0] }, 'fast');
-    objb.animate({ "margin-top": set_top[1] + navh, height: winh - set_top[1] - navh + set_foot[1] }, 'fast');
+    obja.animate({ "margin-top": set_top[0] + navh, "height": winh - set_top[0] - navh + set_foot[0] }, 'fast');
+    objb.animate({ "margin-top": set_top[1] + navh, "height": winh - set_top[1] - navh + set_foot[1] }, 'fast');
 
     need_respond = false;
 }
