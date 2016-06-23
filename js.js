@@ -10,8 +10,6 @@ if ($(window).width() < 770) {
     }
 }
 
-//if (confirm('ALLSO 由于各种原因已停止更新，'))
-
 
 //常用变量
 var soinput_obj = $('#soinput'),
@@ -23,9 +21,10 @@ var obj_list1_buttons = $("td.set-list-1 button"),
     obj_list2_buttons = $("td.set-list-2 button");
 
 
-/* 设置搜索引擎 */
 var set_url = [], set_top = [0,0], set_left = [0,0], set_foot = [0,0];
+respond(); //启动后的第一次响应式
 
+/* 设置搜索引擎 */
 if (localStorage["allso_0"] == undefined) {
     set(0, 3);
     obj_list1_buttons.eq(3).removeClass("btn-info").addClass("btn-danger");
@@ -89,7 +88,6 @@ obj_list2_buttons.click(function () {
 /* 窗口状态加载 -1:左边 1:右边 0:中间 */
 if (localStorage["allso_state"] == undefined)
     localStorage["allso_state"] = 0;
-respond(); //启动后的第一次响应式
 /*状态点击改变*/
 function change_state(is_zuo) {
     if (localStorage["allso_state"] == 0)
