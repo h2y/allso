@@ -3,10 +3,10 @@ if ($(window).width() < 770) {
     if (get_answer) {
         if(location.search){
           var tmp = location.search.split('so=', 2), tmp2 = tmp[1]; tmp = tmp2.split('&', 2);
-          window.location.href = "http://cn.bing.com/search?setmkt=zh-cn&setlang=zh-cn&q=" + tmp[0];
+          window.location.href = "//cn.bing.com/search?setmkt=zh-cn&setlang=zh-cn&q=" + tmp[0];
         }
         else
-          window.location.href = "http://cn.bing.com/" ;
+          window.location.href = "//cn.bing.com/" ;
     }
 }
 
@@ -45,19 +45,19 @@ else {
 function set(a0b1, set_so) {
     localStorage["allso_" + a0b1] = set_so;
     if (set_so == 0) {
-        set_url[a0b1] = "http://www.baidu.com/s?wd=";
+        set_url[a0b1] = "//www.baidu.com/s?wd=";
         set_top[a0b1] = -45; set_left[a0b1] = -100; set_foot[a0b1] = 80;
     }
     else if (set_so == 1) {
-        set_url[a0b1] = "http://www.haosou.com/s?q=";
+        set_url[a0b1] = "//www.haosou.com/s?q=";
         set_top[a0b1] = 0; set_left[a0b1] = 0; set_foot[a0b1] = 160;
     }
     else if (set_so == 2) {
-        set_url[a0b1] = "http://cn.bing.com/search?setmkt=zh-cn&setlang=zh-cn&q=";
+        set_url[a0b1] = "//cn.bing.com/search?setmkt=zh-cn&setlang=zh-cn&q=";
         set_top[a0b1] = -72; set_left[a0b1] = -80; set_foot[a0b1] = 125;
     }
     else if (set_so == 3) {
-        set_url[a0b1] = "http://www.search.ask.com/web?q=";
+        set_url[a0b1] = "//www.search.ask.com/web?q=";
         set_top[a0b1] = -88; set_left[a0b1] = -145; set_foot[a0b1] = 127;
     }
     need_respond = true;
