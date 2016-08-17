@@ -11,6 +11,12 @@
 
 ![预览](https://cloud.githubusercontent.com/assets/12909077/17729212/a42c4c9c-6495-11e6-83d0-f61fb88333bc.png)
 
+> **特别说明**
+
+> 这是我初学 web 前端开发的第一款网页应用，代码完全不值得学习，千万不要去看代码。
+
+> 不过功能上绝对没问题就是了，我自己就是死忠用户之一，用来搜索很好用很方便。有时间会重构代码。
+
 
 ## 链接地址
 
@@ -45,7 +51,7 @@ ALLSO 采用纯单页面实现，加载一次后页面 0 刷新。
 
 更多搜索引擎陆续增加中 ······
 
-![免翻墙支持谷歌](https://cloud.githubusercontent.com/assets/12909077/17729101/0c4632bc-6495-11e6-8d31-caa51864df4c.png)
+![免翻墙支持谷歌](https://cloud.githubusercontent.com/assets/12909077/17732172/1d400a6c-64a3-11e6-9fa9-7b786fbd60c9.png)
 
 
 ## 常见问题

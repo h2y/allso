@@ -28,7 +28,10 @@ div.progress {margin-top: 15px; cursor:pointer }
 #jdt2 {width: 50%}
 
 /*设置界面*/
-div.modal-body>div.alert {margin-bottom: 10px}
+div.modal-body div.checkbox {
+    text-align: right;
+}
+
 
 /* 两个窗口 */
 #a, #b {

@@ -21,7 +21,9 @@ if ($(window).width() < 770) {
 var soinput_obj = $('#soinput'),
     objProgress = $('div.progress>div'),
     obja = $('#a'),
-    objb = $('#b');
+    objb = $('#b'),
+    obj_autoSO = $('#autoSO'),
+    autoSO = true;
 var need_respond = true;
 var obj_list1_buttons = $("td.set-list-1 button"),
     obj_list2_buttons = $("td.set-list-2 button");
@@ -29,6 +31,17 @@ var obj_list1_buttons = $("td.set-list-1 button"),
 
 var set_url = [], set_top = [0,0], set_left = [0,0], set_foot = [0,0];
 respond(); //启动后的第一次响应式
+
+
+if(localStorage["allso_autoSO"]===undefined) {
+    localStorage["allso_autoSO"] = true;
+    obj_autoSO[0].checked = true;
+    autoSO = true;
+}
+else {
+    obj_autoSO[0].checked = localStorage["allso_autoSO"]==='true';
+    autoSO = obj_autoSO[0].checked;
+}
 
 /* 设置搜索引擎 */
 if (localStorage["allso_0"] == undefined) {
@@ -79,10 +92,18 @@ obj_list2_buttons.click(function () {
     $(this).removeClass("btn-warning").addClass("btn-success");
 });
 
+// 实时搜索开关
+obj_autoSO.change(function(){
+    localStorage['allso_autoSO'] = this.checked;
+    autoSO = this.checked;
+});
+
 /* 响应 Hash */
 (function () {
     if (location.hash) {
-        soinput_obj[0].value = getHash();
+        var hash = getHash();
+        hash = decodeURIComponent(hash);
+        soinput_obj[0].value = hash;
         so();
     }
 })();
@@ -136,8 +157,9 @@ function respond() {
 }
 
 /* 搜索按钮事件 */
-if (window.navigator.userAgent.indexOf("Chrome") > 0)
-    soinput_obj.attr('oninput', 'so();');
+soinput_obj.on('input', function(){
+    if(autoSO) so();
+});
 function so() {
     if ($.trim(soinput_obj[0].value) !== '') {
         obja[0].src = ''; objb[0].src = '';
@@ -152,11 +174,13 @@ function so() {
         else
             objb[0].src = set_url[1] + sowhat;
 
-        window.document.title = sowhat_str + ' - ALLSO';
+        location.hash = sowhat_str;
+        window.document.title = hash + ' - ALLSO';
     }
-    else
+    else {
+        location.hash = '';
         window.document.title = 'ALLSO - 聚合搜索引擎';
-    location.hash = sowhat_str;
+    }
 
     if (need_respond)
         respond();
@@ -167,9 +191,5 @@ function so() {
     }, 2000);
 }
 
-// hash 改变事件
-window.addEventListener("hashchange", function() {
-    soinput_obj[0].value = getHash();
-}, false);
 
 $('div.loading').fadeOut('fast');
