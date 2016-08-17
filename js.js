@@ -1,12 +1,18 @@
+function getHash() {
+    if(location.hash)
+        return location.hash.substring(1);
+    return '';
+}
+
+
 if ($(window).width() < 770) {
     var get_answer = confirm("ALLSO 是一个聚合性搜索引擎，可以同时对 2 个搜索引擎展开搜索，页面一分为二，充分利用屏幕资源。\n\n然而。。。\n\n你的屏幕实在是太小了，请在电脑或平板上使用 ALLSO，相信会带给你一份相当棒的体验！\n\nhttp://h2y.github.io/allso/\n\n----------\n点击[是]，将跳转到必应手机版：");
     if (get_answer) {
-        if(location.search){
-          var tmp = location.search.split('so=', 2), tmp2 = tmp[1]; tmp = tmp2.split('&', 2);
-          window.location.href = "//cn.bing.com/search?setmkt=zh-cn&setlang=zh-cn&q=" + tmp[0];
-        }
+        var hash = getHash();
+        if(hash)
+          window.location.href = "https://cn.bing.com/search?setmkt=zh-cn&setlang=zh-cn&q=" + hash;
         else
-          window.location.href = "//cn.bing.com/" ;
+          window.location.href = "https://cn.bing.com/" ;
     }
 }
 
@@ -45,19 +51,19 @@ else {
 function set(a0b1, set_so) {
     localStorage["allso_" + a0b1] = set_so;
     if (set_so == 0) {
-        set_url[a0b1] = "//www.baidu.com/s?wd=";
+        set_url[a0b1] = "http://www.baidu.com/s?wd=";
         set_top[a0b1] = -45; set_left[a0b1] = -100; set_foot[a0b1] = 80;
     }
     else if (set_so == 1) {
-        set_url[a0b1] = "//www.haosou.com/s?q=";
+        set_url[a0b1] = "http://www.haosou.com/s?q=";
         set_top[a0b1] = 0; set_left[a0b1] = 0; set_foot[a0b1] = 160;
     }
     else if (set_so == 2) {
-        set_url[a0b1] = "//cn.bing.com/search?setmkt=zh-cn&setlang=zh-cn&q=";
+        set_url[a0b1] = "http://cn.bing.com/search?setmkt=zh-cn&setlang=zh-cn&q=";
         set_top[a0b1] = -72; set_left[a0b1] = -80; set_foot[a0b1] = 125;
     }
     else if (set_so == 3) {
-        set_url[a0b1] = "//www.search.ask.com/web?q=";
+        set_url[a0b1] = "http://www.search.ask.com/web?q=";
         set_top[a0b1] = -88; set_left[a0b1] = -145; set_foot[a0b1] = 127;
     }
     need_respond = true;
@@ -73,14 +79,10 @@ obj_list2_buttons.click(function () {
     $(this).removeClass("btn-warning").addClass("btn-success");
 });
 
-/* 响应get */
+/* 响应 Hash */
 (function () {
-    if (location.href.indexOf("so=") > -1) {
-        var tmp = location.href.split('so=', 2),
-            tmp2 = tmp[1];
-        tmp = tmp2.split('&', 2);
-        tmp2 = decodeURIComponent(tmp[0]).replace(/\+/g, ' ');
-        soinput_obj[0].value = tmp2;
+    if (location.hash) {
+        soinput_obj[0].value = getHash();
         so();
     }
 })();
@@ -137,7 +139,7 @@ function respond() {
 if (window.navigator.userAgent.indexOf("Chrome") > 0)
     soinput_obj.attr('oninput', 'so();');
 function so() {
-    if ($.trim(soinput_obj[0].value) != '') {
+    if ($.trim(soinput_obj[0].value) !== '') {
         obja[0].src = ''; objb[0].src = '';
         var sowhat_str = soinput_obj[0].value,
             sowhat = encodeURIComponent(sowhat_str);
@@ -154,6 +156,7 @@ function so() {
     }
     else
         window.document.title = 'ALLSO - 聚合搜索引擎';
+    location.hash = sowhat_str;
 
     if (need_respond)
         respond();
@@ -163,5 +166,10 @@ function so() {
         objProgress.removeClass('progress-bar-striped active');
     }, 2000);
 }
+
+// hash 改变事件
+window.addEventListener("hashchange", function() {
+    soinput_obj[0].value = getHash();
+}, false);
 
 $('div.loading').fadeOut('fast');

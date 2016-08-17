@@ -1,7 +1,7 @@
 # ALLSO
 **超实用双栏聚合搜索引擎**
 
-![ALLSO](http://hzy.pw/wp-content/uploads/2015/05/未标题-1-e1432007486758.jpg)
+![ALLSO Logo](https://cloud.githubusercontent.com/assets/12909077/17729102/0c5bad68-6495-11e6-9d54-c3dba7709a1c.jpg)
 
 输入一个关键字，ALLSO 会自动提交给左右两个搜索引擎，同时返回他们的搜索结果！
 
@@ -9,16 +9,16 @@
 
 并且网页 UI 做的相当漂亮，简洁。绝对会让你爱不释手！
 
-![预览](http://hzy.pw/wp-content/uploads/2015/05/无标题.jpg)
+![预览](https://cloud.githubusercontent.com/assets/12909077/17729212/a42c4c9c-6495-11e6-83d0-f61fb88333bc.png)
 
 
 ## 链接地址
 
-**开始使用 ALLSO：[http://h2y.github.io/allso](http://h2y.github.io/allso)**
+**开始使用 ALLSO：<http://h2y.github.io/allso>**
 
 Github 项目主页：[h2y/allso](https://github.com/h2y/allso/)
 
-个人网站发布页面：[http://hzy.pw/p/1389](http://hzy.pw/p/1389)
+个人网站发布页面：<https://hzy.pw/p/1389>
 
 
 ## 特色功能介绍
@@ -45,18 +45,18 @@ ALLSO 采用纯单页面实现，加载一次后页面 0 刷新。
 
 更多搜索引擎陆续增加中 ······
 
-![免翻墙支持谷歌](http://hzy.pw/wp-content/uploads/2015/05/猎豹截图20150716095130.jpg)
+![免翻墙支持谷歌](https://cloud.githubusercontent.com/assets/12909077/17729101/0c4632bc-6495-11e6-8d31-caa51864df4c.png)
 
 
 ## 常见问题
 
 - **如何将 ALLSO 设置为浏览器默认搜索引擎**
 
-ALLSO 会响应响应 Get 请求。例如，你可以访问 [http://h2y.github.io/allso/?so=Moshel](http://h2y.github.io/allso/?so=Moshel)，即可立即展开对 *Moshel* 的搜索。
+ALLSO 会响应响应 Hash 请求。例如，你可以访问 [http://h2y.github.io/allso#Moshel](http://h2y.github.io/allso#Moshel)，即可立即展开对 *Moshel* 的搜索。
 
 所以，你可以在浏览器中这样设置，使 ALLSO 成为你的默认搜索引擎：*（浏览器设置 -> 管理搜索引擎）*
 
-![设置为浏览器默认搜索引擎](http://hzy.pw/wp-content/uploads/2015/05/QQ截图20150518220609.jpg)
+![设置为浏览器默认搜索引擎](https://cloud.githubusercontent.com/assets/12909077/17730376/0cfe6e9e-649b-11e6-9fdc-32bde58340ec.JPG)
 
 - **ALLSO 不支持 Google 源站？**
 
