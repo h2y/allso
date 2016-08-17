@@ -102,7 +102,7 @@ obj_autoSO.change(function(){
 (function () {
     if (location.hash) {
         var hash = getHash();
-        hash = decodeURIComponent(hash);
+        hash = decodeURIComponent(hash).replace(/\+/g, ' ');
         soinput_obj[0].value = hash;
         so();
     }
