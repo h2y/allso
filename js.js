@@ -175,7 +175,7 @@ function so() {
             objb[0].src = set_url[1] + sowhat;
 
         location.hash = sowhat_str;
-        window.document.title = hash + ' - ALLSO';
+        window.document.title = sowhat_str + ' - ALLSO';
     }
     else {
         location.hash = '';
