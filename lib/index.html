@@ -1,0 +1,116 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no"/>
+  <meta charset="utf-8">
+  <title>ALLSO - 聚合搜索引擎</title>
+  <link rel='canonical' href='http://h2y.github.io/allso'>
+  <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <link href="dist/styles/main.css" rel="stylesheet" inline>
+  <link rel="shortcut icon" href="static/fav.ico" />
+</head>
+
+<body>
+  <!--[if lte IE 9]>
+    <div id="outdated">
+        <h6>亲，你该升级浏览器了</h6>
+        <p>使用现代化的浏览器，才能够完美地渲染出各种页面，并拥有更快的上网速度<a id="btnUpdateBrowser" href="https://hzy.pw/p/1792" target="_blank">现在升级</a></p>
+        <p class="last"><a href="#" onclick="document.getElementById('outdated').style.display='none'" id="btnCloseUpdateBrowser" title="关闭">&times;</a></p>
+    </div>
+  <![endif]-->
+
+  <div class="loading">
+    <div class="loading-gif"></div>
+  </div>
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid row">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="http://h2y.github.io/allso">
+          <strong>&nbsp;ALLSO 聚合搜索引擎</strong>
+        </a>
+      </div>
+      <div class="collapse navbar-collapse">
+        <form class="navbar-form navbar-right" onsubmit="return false;">
+          <div class="form-group">
+            <input name='s' type="text" class="form-control" id='soinput' placeholder="中原驿站 http://hzy.pw">
+          </div>
+          <button onclick='so();' type="submit" class="btn btn-primary" id='sobut'>ALLSO 一下！</button>
+        </form>
+        <ul class="nav navbar-nav navbar-left">
+          <li><a href="#" data-toggle="modal" data-target="#set">搜索设置</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">关于 <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="https://github.com/h2y/allso" target='_blank'>ALLSO 由 Moshel 开发</a></li>
+              <li><a href="https://hzy.pw" target='_blank'>点击来访我的个人网站</a></li>
+              <li class="divider"></li>
+              <li><a href="https://hzy.pw/liuyanban" target='_blank'>我有更好的意见需要反馈</a></li>
+            </ul>
+          </li>
+        </ul>
+        <div class="progress">
+          <div id='jdt1' class="progress-bar progress-bar-info" onclick="change_state(true)">☀</div>
+          <div id='jdt2' class="progress-bar progress-bar-success" onclick="change_state(false)">❉</div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <iframe id='a' class="0"></iframe>
+  <iframe id='b' class="1"></iframe>
+
+  <div class="modal fade" id='set'>
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h4 class="modal-title">搜索设置</h4>
+        </div>
+        <div class="modal-body">
+          <table class="table table-hover set-list">
+            <tr>
+              <th>一号搜索引擎</th>
+              <th>二号搜索引擎</th>
+            </tr>
+            <tr>
+              <td class="set-list-1">
+                <p>
+                  <button type="button" class="btn btn-info" onclick="set(0,0)">百度</button>&nbsp;
+                  <button type="button" class="btn btn-info" onclick="set(0,1)">好搜</button>&nbsp;
+                  <button type="button" class="btn btn-info" onclick="set(0,2)">必应</button>&nbsp;
+                  <button type="button" class="btn btn-info" onclick="set(0,3)">谷歌</button>
+                </p>
+              </td>
+              <td class="set-list-2">
+                <p>
+                  <button type="button" class="btn btn-warning" onclick="set(1,0)">百度</button>&nbsp;
+                  <button type="button" class="btn btn-warning" onclick="set(1,1)">好搜</button>&nbsp;
+                  <button type="button" class="btn btn-warning" onclick="set(1,2)">必应</button>&nbsp;
+                  <button type="button" class="btn btn-warning" onclick="set(1,3)">谷歌</button>
+                </p>
+              </td>
+            </tr>
+          </table>
+          <div class="alert alert-success" role="alert">ALLSO 使用了黑科技，让大家无需翻墙即可使用 Google，欢迎体验！</div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" id="autoSO">
+              在输入关键字时实时进行搜索
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</body>
+
+<script src="https://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<script src="dist/js/js.js"></script>
+
+</html>

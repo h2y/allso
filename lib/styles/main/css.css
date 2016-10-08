@@ -1,0 +1,40 @@
+body {overflow:hidden}
+
+/*loading遮盖层*/
+div.loading{
+    position: fixed; top: 0; left: 0;
+    z-index: 1100;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: .5;
+}
+.loading > div.loading-gif {
+    position: fixed; top: 45%; left: 45%;
+    z-index: 1101;
+    width: 124px; height: 124px;
+    background: url('loading.gif') 50% 50% no-repeat;
+}
+
+/*顶栏*/
+div.container-fluid {width:100%}
+#soinput {width:500px}
+/*进度条*/
+div.progress {margin-top: 15px; cursor:pointer }
+#jdt1 {width: 50%}
+#jdt2 {width: 50%}
+
+/*设置界面*/
+div.modal-body div.checkbox {
+    text-align: right;
+}
+
+
+/* 两个窗口 */
+#a, #b {
+	width:49%;
+    border:0; padding:0;
+	position:absolute; top:0; left:0;
+}
+#a {z-index:2;}
+#b {z-index:1;}
