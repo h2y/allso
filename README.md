@@ -62,7 +62,7 @@ ALLSO 会响应响应 Hash 请求。例如，你可以访问 [http://h2y.github.
 
 是的，由于 Google 页面标明了禁止被引用在站外 iframe 中，根据互联网协议，ALLSO 不能抓取并显示其搜索内容。
 
-免翻墙路线实际是使用了 ASK.com 服务器作为中转。（[http://www.search.ask.com](http://www.search.ask.com)）
+免翻墙路线实际是使用了 ASK.com 服务器作为中转。（[https://www.search.ask.com](https://www.search.ask.com)）
 
 
 ## 相关推荐
