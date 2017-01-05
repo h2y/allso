@@ -39,16 +39,17 @@ ALLSO 采用纯单页面实现，加载一次后页面 0 刷新。
 
 对搜索引擎返回的页面进行切割，去除边缘的无用区域，仅保留我们想看的内容。
 
-- **多搜索引擎自由选择 免翻墙支持谷歌**
+> **特别说明：**现在不再支持免翻墙上谷歌
 
-无需多言，免翻墙支持谷歌，低调低调~
-
-更多搜索引擎陆续增加中 ······
-
-![免翻墙支持谷歌](https://cloud.githubusercontent.com/assets/12909077/17732172/1d400a6c-64a3-11e6-9fa9-7b786fbd60c9.png)
-
+> 由于 GFW 的封杀，我也木有办法 T.T
 
 ## 常见问题
+
+- **ALLSO 不支持 Google 源站？**
+
+是的，由于 Google 页面标明了禁止被引用在站外 iframe 中，根据互联网协议，ALLSO 不能抓取并显示其搜索内容。
+
+谷歌墙路线实际是使用了 ASK.com 服务器作为中转。（[https://www.search.ask.com](https://www.search.ask.com)）
 
 - **如何将 ALLSO 设置为浏览器默认搜索引擎**
 
@@ -58,17 +59,19 @@ ALLSO 会响应响应 Hash 请求。例如，你可以访问 [http://h2y.github.
 
 ![设置为浏览器默认搜索引擎](https://cloud.githubusercontent.com/assets/12909077/17730376/0cfe6e9e-649b-11e6-9fdc-32bde58340ec.JPG)
 
-- **ALLSO 不支持 Google 源站？**
+## 开发说明
 
-是的，由于 Google 页面标明了禁止被引用在站外 iframe 中，根据互联网协议，ALLSO 不能抓取并显示其搜索内容。
+使用 glup 进行前端打包。/lib 为源文件目录，/dist 为生成后的文件目录，/static 为不参与打包的静态资源。
 
-免翻墙路线实际是使用了 ASK.com 服务器作为中转。（[https://www.search.ask.com](https://www.search.ask.com)）
-
+```shell
+npm install
+npm run start # npm run build
+```
 
 ## 相关推荐
 
-**soTab 搜索引擎一键相互切换脚本**
+**我的 UserScript 浏览器脚本**
 
-这是一段 UserScript，用于在浏览器中。能让你在百度谷歌等搜索引擎中搜索东西时，可以一键相互切换。
+这里是数个独立的 UserScript 浏览器脚本，为浏览器实现了各种强大的的功能。
 
-Github 项目主页：[h2y/sotab](https://github.com/h2y/sotab)
+我的 greasyfork 主页： <https://greasyfork.org/zh-CN/users/19299>
